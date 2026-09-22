@@ -1,8 +1,8 @@
-```css
-/* =========================
+
+/* ==========================================
    ALLERGY SCANNER
-   Main Styles
-========================= */
+   Modern iPhone Design
+========================================== */
 
 * {
     box-sizing: border-box;
@@ -11,27 +11,32 @@
 }
 
 :root {
-    --blue: #2563eb;
-    --blue-dark: #1d4ed8;
+    --blue: #3157f5;
+    --blue-dark: #2445d8;
+    --blue-light: #eef2ff;
 
-    --green: #16a34a;
-    --green-light: #dcfce7;
+    --green: #18a558;
+    --green-light: #e9f9f0;
 
-    --yellow: #d97706;
-    --yellow-light: #fef3c7;
+    --red: #ef4444;
+    --red-light: #fff0f0;
 
-    --red: #dc2626;
-    --red-light: #fee2e2;
+    --yellow: #f59e0b;
+    --yellow-light: #fff8e7;
 
-    --background: #f5f7fb;
-    --card: #ffffff;
+    --dark: #101828;
+    --text: #344054;
+    --muted: #667085;
 
-    --text: #111827;
-    --secondary-text: #6b7280;
+    --background: #f6f8fc;
+    --white: #ffffff;
+    --border: #e4e7ec;
 
-    --border: #e5e7eb;
+    --radius: 24px;
+}
 
-    --radius: 20px;
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -43,8 +48,14 @@ body {
         "Segoe UI",
         sans-serif;
 
-    background: var(--background);
-    color: var(--text);
+    background:
+        linear-gradient(
+            180deg,
+            #eef3ff 0px,
+            #f6f8fc 360px
+        );
+
+    color: var(--dark);
 
     min-height: 100vh;
 
@@ -52,160 +63,215 @@ body {
 }
 
 
-/* =========================
-   APP CONTAINER
-========================= */
+/* ==========================================
+   APP
+========================================== */
 
 .app {
     width: 100%;
-    max-width: 600px;
+    max-width: 520px;
 
     margin: 0 auto;
 
     padding:
-        24px
+        22px
         18px
-        40px;
+        50px;
 }
 
 
-/* =========================
+/* ==========================================
    HEADER
-========================= */
+========================================== */
 
 .header {
     display: flex;
     align-items: center;
 
-    gap: 14px;
+    gap: 13px;
 
-    margin-bottom: 28px;
+    margin-bottom: 30px;
 }
 
 .logo {
-    width: 54px;
-    height: 54px;
+    width: 52px;
+    height: 52px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    background: #e0edff;
+    background:
+        linear-gradient(
+            135deg,
+            #3157f5,
+            #6d83ff
+        );
 
-    border-radius: 16px;
+    border-radius: 17px;
 
-    font-size: 28px;
+    box-shadow:
+        0 8px 20px rgba(49, 87, 245, 0.22);
+
+    font-size: 27px;
 }
 
 .header h1 {
-    font-size: 24px;
+    font-size: 23px;
+
     font-weight: 800;
 
-    letter-spacing: -0.5px;
+    letter-spacing: -0.6px;
 }
 
 .header p {
-    margin-top: 3px;
+    color: var(--muted);
 
-    font-size: 14px;
+    font-size: 13px;
 
-    color: var(--secondary-text);
+    margin-top: 2px;
 }
 
 
-/* =========================
-   WELCOME
-========================= */
+/* ==========================================
+   HERO
+========================================== */
 
 .welcome {
-    margin-bottom: 20px;
+    margin-bottom: 22px;
 }
 
 .welcome h2 {
-    font-size: 28px;
+    font-size: 32px;
 
-    margin-bottom: 8px;
+    line-height: 1.1;
 
-    letter-spacing: -0.5px;
+    letter-spacing: -1.2px;
+
+    margin-bottom: 10px;
 }
 
 .welcome p {
-    color: var(--secondary-text);
-
-    line-height: 1.5;
+    color: var(--muted);
 
     font-size: 16px;
+
+    line-height: 1.55;
+
+    max-width: 410px;
 }
 
 
-/* =========================
-   CARDS
-========================= */
-
-.scanner-card,
-.manual-card,
-.allergy-card,
-.product-section {
-    background: var(--card);
-
-    border-radius: var(--radius);
-
-    padding: 22px;
-
-    margin-bottom: 18px;
-
-    box-shadow:
-        0 4px 20px rgba(0, 0, 0, 0.04);
-}
-
-
-/* =========================
+/* ==========================================
    SCANNER CARD
-========================= */
+========================================== */
 
 .scanner-card {
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #3157f5,
+            #5270ff
+        );
+
+    color: white;
+
+    border-radius: 28px;
+
+    padding: 28px 22px;
+
+    margin-bottom: 16px;
+
     text-align: center;
 
-    border: 1px solid #dbeafe;
+    box-shadow:
+        0 18px 40px rgba(49, 87, 245, 0.25);
+}
+
+.scanner-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.08);
+
+    top: -80px;
+    right: -60px;
+}
+
+.scanner-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 130px;
+    height: 130px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.06);
+
+    bottom: -70px;
+    left: -50px;
 }
 
 .scanner-icon {
-    width: 70px;
-    height: 70px;
+    position: relative;
+    z-index: 1;
+
+    width: 72px;
+    height: 72px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    margin: 0 auto 14px;
+    margin: 0 auto 16px;
 
-    background: #eff6ff;
+    background: rgba(255,255,255,0.15);
 
-    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.2);
+
+    border-radius: 22px;
 
     font-size: 34px;
 }
 
 .scanner-card h2 {
-    font-size: 22px;
+    position: relative;
+    z-index: 1;
 
-    margin-bottom: 8px;
+    font-size: 23px;
+
+    margin-bottom: 7px;
 }
 
 .scanner-card p {
-    color: var(--secondary-text);
+    position: relative;
+    z-index: 1;
 
-    font-size: 15px;
+    color: rgba(255,255,255,0.82);
 
     line-height: 1.5;
+
+    font-size: 14px;
 
     margin-bottom: 20px;
 }
 
 
-/* =========================
+/* ==========================================
    BUTTONS
-========================= */
+========================================== */
 
 button {
     font-family: inherit;
@@ -218,60 +284,77 @@ button {
 }
 
 .primary-button {
+    position: relative;
+    z-index: 2;
+
     width: 100%;
 
-    background: var(--blue);
+    padding: 16px 18px;
 
-    color: white;
+    border-radius: 16px;
 
-    font-size: 17px;
-
-    font-weight: 700;
-
-    padding: 16px;
-
-    border-radius: 15px;
-
-    transition:
-        background 0.2s,
-        transform 0.1s;
-}
-
-.primary-button:hover {
-    background: var(--blue-dark);
-}
-
-.primary-button:active {
-    transform: scale(0.98);
-}
-
-.secondary-button {
-    background: #eef2ff;
+    background: white;
 
     color: var(--blue);
 
-    font-weight: 700;
+    font-size: 16px;
 
-    padding: 13px 16px;
+    font-weight: 800;
 
-    border-radius: 12px;
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.12);
+
+    transition:
+        transform 0.15s,
+        box-shadow 0.15s;
+}
+
+.primary-button:active {
+    transform: scale(0.97);
+
+    box-shadow:
+        0 2px 8px rgba(0,0,0,0.1);
 }
 
 
-/* =========================
+/* ==========================================
+   GENERIC CARDS
+========================================== */
+
+.manual-card,
+.allergy-card,
+.product-section {
+    background: var(--white);
+
+    border: 1px solid rgba(16,24,40,0.05);
+
+    border-radius: var(--radius);
+
+    padding: 21px;
+
+    margin-bottom: 16px;
+
+    box-shadow:
+        0 8px 30px rgba(16,24,40,0.045);
+}
+
+
+/* ==========================================
    MANUAL SEARCH
-========================= */
+========================================== */
 
 .manual-card h3 {
     font-size: 17px;
 
-    margin-bottom: 6px;
+    margin-bottom: 5px;
 }
 
 .manual-card p {
-    color: var(--secondary-text);
+    color: var(--muted);
 
-    font-size: 14px;
+    font-size: 13px;
+
+    line-height: 1.5;
 
     margin-bottom: 14px;
 }
@@ -287,32 +370,388 @@ button {
 
     min-width: 0;
 
+    height: 48px;
+
     border: 1px solid var(--border);
 
     background: #f9fafb;
 
-    border-radius: 12px;
+    border-radius: 14px;
 
-    padding: 13px;
+    padding: 0 14px;
+
+    font-family: inherit;
 
     font-size: 16px;
 
+    color: var(--dark);
+
     outline: none;
+
+    transition:
+        border 0.2s,
+        box-shadow 0.2s;
 }
 
 .manual-input input:focus {
+    background: white;
+
     border-color: var(--blue);
 
-    background: white;
+    box-shadow:
+        0 0 0 4px rgba(49,87,245,0.1);
+}
+
+.secondary-button {
+    height: 48px;
+
+    padding: 0 18px;
+
+    border-radius: 14px;
+
+    background: var(--blue-light);
+
+    color: var(--blue);
+
+    font-size: 14px;
+
+    font-weight: 800;
 }
 
 
-/* =========================
-   ALLERGIES
-========================= */
+/* ==========================================
+   ALLERGY SETTINGS
+========================================== */
 
 .allergy-card h2 {
-    font-size: 21px;
+    font-size: 20px;
 
-    margin-b
-```
+    letter-spacing: -0.3px;
+
+    margin-bottom: 5px;
+}
+
+.allergy-card > p {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    margin-bottom: 17px;
+}
+
+.allergy-list {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 8px;
+}
+
+.allergy-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    min-height: 48px;
+
+    padding: 10px;
+
+    background: #f8f9fc;
+
+    border: 1px solid transparent;
+
+    border-radius: 13px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s,
+        border 0.15s;
+}
+
+.allergy-item:has(input:checked) {
+    background: var(--blue-light);
+
+    border-color:
+        rgba(49,87,245,0.18);
+}
+
+.allergy-item input {
+    width: 18px;
+    height: 18px;
+
+    accent-color: var(--blue);
+
+    flex-shrink: 0;
+}
+
+.allergy-item span {
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* ==========================================
+   PRODUCT RESULT
+========================================== */
+
+.product-section h2 {
+    font-size: 24px;
+
+    line-height: 1.2;
+
+    margin-top: 13px;
+
+    margin-bottom: 5px;
+
+    letter-spacing: -0.5px;
+}
+
+.barcode {
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+/* ==========================================
+   RESULT BADGE
+========================================== */
+
+.result-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 8px 12px;
+
+    border-radius: 999px;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.2px;
+}
+
+.result-badge.safe {
+    background: var(--green-light);
+
+    color: var(--green);
+}
+
+.result-badge.warning {
+    background: var(--yellow-light);
+
+    color: #b45309;
+}
+
+.result-badge.danger {
+    background: var(--red-light);
+
+    color: var(--red);
+}
+
+
+/* ==========================================
+   RESULT MESSAGE
+========================================== */
+
+.result-message {
+    margin-top: 18px;
+
+    padding: 16px;
+
+    background: #f8f9fc;
+
+    border-radius: 16px;
+}
+
+.result-message h3 {
+    font-size: 15px;
+
+    margin-bottom: 6px;
+}
+
+.result-message p {
+    color: var(--muted);
+
+    line-height: 1.55;
+
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   INFO
+========================================== */
+
+.info-box {
+    margin-top: 10px;
+
+    padding: 15px;
+
+    background: #f8f9fc;
+
+    border-radius: 15px;
+}
+
+.info-box h3 {
+    font-size: 14px;
+
+    margin-bottom: 7px;
+}
+
+.info-box p {
+    color: #475467;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* ==========================================
+   CAMERA
+========================================== */
+
+.scanner-section {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    background: #050505;
+
+    color: white;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.scanner-section video {
+    width: 100%;
+
+    max-width: 500px;
+
+    border-radius: 24px;
+}
+
+.scanner-header {
+    position: absolute;
+
+    top: 22px;
+
+    left: 20px;
+    right: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    z-index: 5;
+}
+
+.scanner-header h2 {
+    font-size: 20px;
+}
+
+.close-button {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.14);
+
+    color: white;
+
+    font-size: 18px;
+}
+
+.scanner-frame {
+    position: absolute;
+
+    width: 72%;
+
+    max-width: 330px;
+
+    height: 120px;
+
+    border: 3px solid #35d07f;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 0 0 9999px rgba(0,0,0,0.25);
+
+    pointer-events: none;
+}
+
+#scannerStatus {
+    margin-top: 20px;
+
+    color: #d0d5dd;
+
+    font-size: 14px;
+
+    text-align: center;
+
+    max-width: 320px;
+}
+
+
+/* ==========================================
+   WARNING
+========================================== */
+
+.warning {
+    padding: 17px;
+
+    margin-top: 2px;
+
+    background: #fff8eb;
+
+    border: 1px solid #fedf89;
+
+    border-radius: 18px;
+}
+
+.warning strong {
+    color: #b54708;
+
+    font-size: 14px;
+}
+
+.warning p {
+    margin-top: 7px;
+
+    color: #7a2e0e;
+
+    font-size: 12px;
+
+    line-height: 1.55;
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer {
+    text-ali
