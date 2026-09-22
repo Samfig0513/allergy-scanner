@@ -1,4 +1,4 @@
-```javascript
+
 // ALLERGY SCANNER
 
 const barcodeInput = document.getElementById("barcodeInput");
@@ -115,10 +115,3 @@ function saveAllergies() {
         "allergyScannerAllergies",
         JSON.stringify(selected)
     );
-}
-
-
-// LADDA ALLERGIER
-
-function loadAll
-```
