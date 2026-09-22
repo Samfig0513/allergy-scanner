@@ -1,0 +1,317 @@
+```html
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#ffffff"
+    >
+
+    <title>Allergy Scanner</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span>🥗</span>
+            </div>
+
+            <div>
+                <h1>Allergy Scanner</h1>
+                <p>Kontrollera produkter enkelt</p>
+            </div>
+        </header>
+
+
+        <!-- Start -->
+        <section class="welcome">
+
+            <h2>Välkommen 👋</h2>
+
+            <p>
+                Skanna en produkts streckkod och
+                kontrollera den mot dina allergier.
+            </p>
+
+        </section>
+
+
+        <!-- Scanner button -->
+        <section class="scanner-card">
+
+            <div class="scanner-icon">
+                📷
+            </div>
+
+            <h2>Skanna produkt</h2>
+
+            <p>
+                Använd kameran för att läsa
+                produktens streckkod.
+            </p>
+
+            <button
+                id="scanButton"
+                class="primary-button"
+            >
+                📷 Skanna streckkod
+            </button>
+
+        </section>
+
+
+        <!-- Scanner -->
+        <section
+            id="scannerSection"
+            class="scanner-section hidden"
+        >
+
+            <div class="scanner-header">
+
+                <h2>Skanna streckkod</h2>
+
+                <button
+                    id="closeScanner"
+                    class="close-button"
+                >
+                    ✕
+                </button>
+
+            </div>
+
+            <video
+                id="scannerVideo"
+                autoplay
+                playsinline
+            ></video>
+
+            <div class="scanner-frame"></div>
+
+            <p id="scannerStatus">
+                Rikta kameran mot streckkoden.
+            </p>
+
+        </section>
+
+
+        <!-- Manual barcode -->
+        <section class="manual-card">
+
+            <h3>Har du ingen kamera?</h3>
+
+            <p>
+                Du kan också skriva in streckkoden manuellt.
+            </p>
+
+            <div class="manual-input">
+
+                <input
+                    id="barcodeInput"
+                    type="text"
+                    inputmode="numeric"
+                    placeholder="T.ex. 7310865004707"
+                >
+
+                <button
+                    id="searchButton"
+                    class="secondary-button"
+                >
+                    Sök
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Product result -->
+        <section
+            id="productSection"
+            class="product-section hidden"
+        >
+
+            <div
+                id="resultBadge"
+                class="result-badge"
+            >
+                🟡 Kontrollerar...
+            </div>
+
+            <h2 id="productName">
+                Produkt
+            </h2>
+
+            <p
+                id="productBarcode"
+                class="barcode"
+            ></p>
+
+            <div class="result-message">
+                <h3 id="resultTitle">
+                    Resultat
+                </h3>
+
+                <p id="resultMessage"></p>
+            </div>
+
+            <div class="info-box">
+
+                <h3>Ingredienser</h3>
+
+                <p id="ingredients">
+                    Ingen information ännu.
+                </p>
+
+            </div>
+
+            <div class="info-box">
+
+                <h3>Allergener</h3>
+
+                <p id="allergens">
+                    Ingen information ännu.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Allergies -->
+        <section class="allergy-card">
+
+            <h2>👤 Mina allergier</h2>
+
+            <p>
+                Välj vad appen ska kontrollera.
+            </p>
+
+            <div class="allergy-list">
+
+                <label class="allergy-item">
+                    <input
+                        type="checkbox"
+                        value="gluten"
+                        checked
+                    >
+                    <span>Gluten / vete</span>
+                </label>
+
+                <label class="allergy-item">
+                    <input
+                        type="checkbox"
+                        value="milk"
+                    >
+                    <span>Mjölk</span>
+                </label>
+
+                <label class="allergy-item">
+                    <input
+                        type="checkbox"
+                        value="egg"
+                    >
+                    <span>Ägg</span>
+                </label>
+
+                <label class="allergy-item">
+                    <input
+                        type="checkbox"
+                        value="peanuts"
+                    >
+                    <span>Jordnötter</span>
+                </label>
+
+                <label class="allergy-item">
+                    <input
+                        type="checkbox"
+                        value="nuts"
+                    >
+                    <span>Nötter</span>
+                </label>
+
+                <label class="allergy-item">
+                    <input
+                        type="checkbox"
+                        value="soy"
+                    >
+                    <span>Soja</span>
+                </label>
+
+                <label class="allergy-item">
+                    <input
+                        type="checkbox"
+                        value="fish"
+                    >
+                    <span>Fisk</span>
+                </label>
+
+                <label class="allergy-item">
+                    <input
+                        type="checkbox"
+                        value="shellfish"
+                    >
+                    <span>Skaldjur</span>
+                </label>
+
+                <label class="allergy-item">
+                    <input
+                        type="checkbox"
+                        value="sesame"
+                    >
+                    <span>Sesam</span>
+                </label>
+
+                <label class="allergy-item">
+                    <input
+                        type="checkbox"
+                        value="mustard"
+                    >
+                    <span>Senap</span>
+                </label>
+
+            </div>
+
+        </section>
+
+
+        <!-- Safety notice -->
+        <section class="warning">
+
+            <strong>⚠️ Viktigt</strong>
+
+            <p>
+                Appen är ett hjälpmedel och kan inte garantera
+                att en produkt är säker att äta.
+                Kontrollera alltid den aktuella
+                produktförpackningen.
+            </p>
+
+        </section>
+
+
+        <footer>
+            <p>Allergy Scanner</p>
+            <p>Produktinformation från Open Food Facts</p>
+        </footer>
+
+    </main>
+
+
+    <script src="app.js"></script>
+
+</body>
+</html>
+```
