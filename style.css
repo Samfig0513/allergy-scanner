@@ -1,4 +1,4 @@
-
+```css
 /* ==========================================
    ALLERGY SCANNER
    Modern iPhone Design
@@ -754,4 +754,70 @@ button {
 ========================================== */
 
 footer {
-    text-ali
+    text-align: center;
+
+    padding: 25px 0 5px;
+
+    color: #98a2b3;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   HIDDEN
+========================================== */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 420px) {
+
+    .app {
+        padding:
+            18px
+            14px
+            40px;
+    }
+
+    .welcome h2 {
+        font-size: 29px;
+    }
+
+    .allergy-list {
+        grid-template-columns: 1fr;
+    }
+
+    .manual-input {
+        flex-direction: column;
+    }
+
+    .secondary-button {
+        width: 100%;
+    }
+}
+
+
+/* ==========================================
+   DESKTOP
+========================================== */
+
+@media (min-width: 700px) {
+
+    .app {
+        padding-top: 40px;
+    }
+
+    .scanner-card {
+        padding: 34px;
+    }
+}
+```
